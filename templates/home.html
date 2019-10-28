@@ -1,0 +1,26 @@
+<html>
+<body>
+<form>
+    <table>
+        <tr>
+            <td>Idno</td>
+            <td>Name</td>
+            <td>Salary</td>
+            <td>Update</td>
+        </tr>
+        {% for i in object_list %}
+            <tr>
+            <td><form action="/delete{{ i.idno }}/">
+                <button type="submit">{{ i.idno }}</button>
+            </form></td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.salary }}</td>
+            <td><form action="/update{{ i.idno }}/">
+                <button type="submit">Yes</button>
+            </form></td>
+            </tr>
+        {% endfor %}
+    </table>
+</form>
+</body>
+</html>
